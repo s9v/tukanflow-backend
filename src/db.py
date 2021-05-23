@@ -3,7 +3,7 @@ from pymongo import MongoClient
 # Database config
 MONGO_IP = 'localhost'
 MONGO_PORT = '27017'
-DB_NAME = 'tukanflow'
+DB_NAME = 'myFirstDatabase'
 # ===
 
 client = MongoClient(f'mongodb://{MONGO_IP}:{MONGO_PORT}/')
@@ -11,9 +11,15 @@ client = MongoClient(f'mongodb://{MONGO_IP}:{MONGO_PORT}/')
 db = client[DB_NAME]
 
 # Collections
-documents_coll = db['documents']
-users_coll = db['users']
-meetings_coll = db['meetings']
+stages = db['stages']
 
-def get_database():
-    return db
+try:
+    resume_token = None
+    pipeline = [{'$match': {'operationType': 'insert'}}]
+    with stages.collection.watch(pipeline) as stream:
+        for insert_change in stream:
+            print(insert_change)
+            resume_token = stream.resume_token
+            # TODO
+except pymongo.errors.PyMongoError:
+    

@@ -76,9 +76,24 @@ WSGI_APPLICATION = 'tukanflow.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+        'ENGINE': 'djongo',
+        'NAME': 'tukanflow',
+    },
+    'CLIENT': {
+        'host': 'localhost',
+        'port': 27017,
+        # 'username': 'db-username',
+        # 'password': 'password',
+    },
+    'LOGGING': {
+        'version': 1,
+        'loggers': {
+            'djongo': {
+                'level': 'DEBUG',
+                'propagate': False,                        
+            }
+        },
+    },
 }
 
 

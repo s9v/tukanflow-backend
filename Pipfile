@@ -12,6 +12,8 @@ dnspython = "*"
 django = "*"
 graphene-django = "*"
 mongoengine = "*"
+djongo = "*"
+graphene-mongo = "*"
 
 [dev-packages]
 

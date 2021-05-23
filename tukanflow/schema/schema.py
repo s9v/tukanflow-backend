@@ -1,28 +1,28 @@
 import graphene
-from graphene_django import DjangoObjectType
+from graphene_mongo import MongoengineObjectType
+from tukanflow.models.feature import Feature as FeatureModel
+import mongoengine
 
-# from .models import Feature
+mongoengine.connect('tukanflow', host='127.0.0.1', port=27017)
 
+class Feature(MongoengineObjectType):
+    class Meta:
+        model = FeatureModel
 
 class Query(graphene.ObjectType):
-    hello = graphene.String(default_value="Hi!")
+    features = graphene.Field(Feature, id=graphene.ID())
 
-# class QuestionType(DjangoObjectType):
-#     class Meta:
-#         model = Question
-#         fields = ("id", "question_text")
+    def resolve_features(root, info, **kwargs):
+        f = FeatureModel()
+        # f.id = '0'
+        # f.title = 'Title'
+        # f.stages = []
+        # f.save()
 
-# class Query(graphene.ObjectType):
-#     features = graphene.Field(Feature, id=graphene.ID())
-#     question_by_id = graphene.Field(QuestionType, id=graphene.String())
-
-#     def resolve_features(root, info, **kwargs):
-#         # Querying a list
-#         return Feature.objects.all()
-
-#     def resolve_question_by_id(root, info, id):
-#         # Querying a single question
-#         return Question.objects.get(pk=id)
+        print(root.objects)
+        print(root.objects)
+        print(root.objects)
+        return root.objects()
 
 schema = graphene.Schema(query=Query)
 

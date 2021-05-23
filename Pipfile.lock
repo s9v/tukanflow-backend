@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "a1c176309ddb153aa7983c76bba25dd51715e5d30c37d050f8efb63c2503f763"
+            "sha256": "4af367e1c071e22411777f9dd101995866fc2f453a66c5ed743f676ead5a4df0"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -41,11 +41,18 @@
         },
         "django": {
             "hashes": [
-                "sha256:13ac78dbfd189532cad8f383a27e58e18b3d33f80009ceb476d7fcbfc5dcebd8",
-                "sha256:7e0a1393d18c16b503663752a8b6790880c5084412618990ce8a81cc908b4962"
+                "sha256:642d8eceab321ca743ae71e0f985ff8fdca59f07aab3a9fb362c617d23e33a76",
+                "sha256:d4666c2edefa38c5ede0ec1655424c56dc47ceb04b6d8d62a7eac09db89545c1"
             ],
             "index": "pypi",
-            "version": "==3.2.3"
+            "version": "==3.0.5"
+        },
+        "djongo": {
+            "hashes": [
+                "sha256:b4b767174095c06eae2c344f201dc809ffc156b9c99d44ab8f798309090cae29"
+            ],
+            "index": "pypi",
+            "version": "==1.3.4"
         },
         "dnspython": {
             "hashes": [
@@ -78,6 +85,13 @@
             "index": "pypi",
             "version": "==2.15.0"
         },
+        "graphene-mongo": {
+            "hashes": [
+                "sha256:83a9380bc0121fcefe9358155ef6b1e778b0673027e4fa78364a9366ae6ee92b"
+            ],
+            "index": "pypi",
+            "version": "==0.2.13"
+        },
         "graphql-core": {
             "hashes": [
                 "sha256:44c9bac4514e5e30c5a595fac8e3c76c1975cae14db215e8174c7fe995825bad",
@@ -99,6 +113,13 @@
             ],
             "markers": "python_version >= '3.6'",
             "version": "==0.12.0"
+        },
+        "iso8601": {
+            "hashes": [
+                "sha256:8aafd56fa0290496c5edbb13c311f78fa3a241f0853540da09d9363eae3ebd79",
+                "sha256:e7e1122f064d626e17d47cd5106bed2c620cb38fe464999e0ddae2b6d2de6004"
+            ],
+            "version": "==0.1.14"
         },
         "mongoengine": {
             "hashes": [
@@ -244,11 +265,11 @@
         },
         "sqlparse": {
             "hashes": [
-                "sha256:017cde379adbd6a1f15a61873f43e8274179378e95ef3fede90b5aa64d304ed0",
-                "sha256:0f91fd2e829c44362cbcfab3e9ae12e22badaa8a29ad5ff599f9ec109f0454e8"
+                "sha256:ce028444cfab83be538752a2ffdb56bc417b7784ff35bb9a3062413717807dec",
+                "sha256:d9cf190f51cbb26da0412247dfe4fb5f4098edb73db84e02f9fc21fdca31fed4"
             ],
             "markers": "python_version >= '3.5'",
-            "version": "==0.4.1"
+            "version": "==0.2.4"
         },
         "starlette": {
             "hashes": [
